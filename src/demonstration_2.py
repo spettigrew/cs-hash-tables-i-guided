@@ -1,71 +1,58 @@
 """
-In a town, there are `N` people labelled from `1` to `N`.  There is a rumor
-that one of these people is secretly the town judge.
+You've uncovered a secret alien language. To your surpise, the language is made
+up of all English lowercase letters. However, the alphabet is possibly in a
+different order (but is some permutation of English lowercase letters).
 
-If the town judge exists, then:
+You need to write a function that, given a sequence of words written in this
+secret language, and the order the alphabet, will determine if the given words
+are sorted "alphabetically" in this secret language.
 
-1. The town judge trusts nobody.
-2. Everybody (except for the town judge) trusts the town judge.
-3. There is exactly one person that satisfies properties 1 and 2.
-
-You are given `trust`, an array of pairs `trust[i] = [a, b]` representing that
-the person labelled a trusts the person labelled `b`.
-
-If the town judge exists and can be identified, return the label of the town
-judge.  Otherwise, return `-1`.
+The function will return a boolean value, true if the given words are sorted
+"alphabetically" (based on the supplied alphabet), and false if they are not
+sorted "alphabetically".
 
 Example 1:
 
 ```plaintext
-Input: N = 2, trust = [[1,2]]
-Output: 2
+Input: words = ["lambda","school"], order = "hlabcdefgijkmnopqrstuvwxyz"
+Output: true
+Explanation: As 'l' comes before 's' in this language, then the sequence is
+sorted.
 ```
 
 Example 2:
 
 ```plaintext
-Input: N = 3, trust = [[1,3],[2,3]]
-Output: 3
+Input: words = ["were","where","yellow"], order = "habcdefgijklmnopqrstuvwxyz"
+Output: false
+Explanation: As 'e' comes after 'h' in this language, then words[0] > words[1],
+hence the sequence is unsorted.
 ```
 
 Example 3:
 
 ```plaintext
-Input: N = 3, trust = [[1,3],[2,3],[3,1]]
-Output: -1
+Input: words = ["lambda","lamb"], order = "abcdefghijklmnopqrstuvwxyz"
+Output: false
+Explanation: The first four characters "lamb" match, and the second string is
+shorter (in size.) According to lexicographical rules "lambda" > "lamb",
+because 'd' > '∅', where '∅' is defined as the blank character which is less
+than any other character (https://en.wikipedia.org/wiki/Lexicographic_order).
 ```
 
-Example 4:
+Notes:
 
-```plaintext
-Input: N = 3, trust = [[1,2],[2,3]]
-Output: -1
-```
-
-Example 5:
-
-```plaintext
-Input: N = 4, trust = [[1,3],[1,4],[2,3],[2,4],[4,3]]
-Output: 3
-```
-
-Constraints:
-
-- `1 <= N <= 1000`
-- `0 <= trust.length <= 10^4`
-- `trust[i].length == 2`
-- `trust[i]` are all different
-- `trust[i][0] != trust[i][1]`
-- `1 <= trust[i][0], trust[i][1] <= N`
+- order.length == 26
+- All characters in words[i] and order are English lowercase letters.
 """
-def find_judge(N, trust):
+def are_words_sorted(words, alpha_order):
     """
     Inputs:
-    N -> int
-    trust -> List[List[int]]
+    words: List[str]
+    alpha_order: str
 
     Output:
-    int
+    bool
     """
     # Your code here
 

@@ -1,51 +1,48 @@
 """
-An `image` is represented by a 2-D array of integers, each integer representing
-the pixel value of the image (from 0 to 65535).
+Your task is create your own HashTable without using a built-in library.
 
-Given a coordinate `(sr, sc)` representing the starting pixel (row and column)
-of the flood fill, and a pixel value `newColor`, "flood fill" the image.
+Your HashTable needs to have the following functions:
 
-To perform a "flood fill", consider the starting pixel, plus any pixels
-connected 4-directionally to the starting pixel of the same color as the
-starting pixel, plus any pixels connected 4-directionally to those pixels (also
-with the same color as the starting pixel), and so on. Replace the color of all
-of the aforementioned pixels with the newColor.
+- put(key, value) : Inserts a (key, value) pair into the HashTable. If the
+value already exists in the HashTable, update the value.
+- get(key): Returns the value to which the specified key is mapped, or -1 if
+this map contains no mapping for the key.
+- remove(key) : Remove the mapping for the value key if this map contains the
+mapping for the key.
 
-At the end, return the modified image.
-
-Example 1:
+Example:
 
 ```plaintext
-Input:
-image = [[1,1,1],[1,1,0],[1,0,1]]
-sr = 1, sc = 1, newColor = 2
-Output: [[2,2,2],[2,2,0],[2,0,1]]
-Explanation:
-From the center of the image (with position (sr, sc) = (1, 1)), all pixels
-connected by a path of the same color as the starting pixel are colored with
-the new color.
-Note the bottom corner is not colored 2, because it is not 4-directionally
-connected to the starting pixel.
+hash_table = MyHashTable();
+hash_table.put("a", 1);
+hash_table.put("b", 2);
+hash_table.get("a");            // returns 1
+hash_table.get("c");            // returns -1 (not found)
+hash_table.put("b", 1);         // update the existing value
+hash_table.get("b");            // returns 1
+hash_table.remove("b");         // remove the mapping for 2
+hash_table.get("b");            // returns -1 (not found)
 ```
-
-Notes:
-
-- The length of `image` and `image[0]` will be in the range `[1, 50]`.
-- The given starting pixel will satisfy `0 <= sr < image.length` and
-`0 <= sc < image[0].length`.
-- The value of each color in `image[i][j]` and `newColor` will be an integer in
-`[0, 65535]`.
 """
-def flood_fill(image, sr, sc, new_color):
-    """
-    Inputs:
-    image -> List[List[int]]
-    sr -> int
-    sc -> int
-    new_color -> int
+class ListNode:
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.next = None
 
-    Output:
-    List[List[int]]
-    """
-    # Your code here
+class MyHashTable:
+    def __init__(self):
+        # Your code here
+
+
+    def put(self, key, value):
+        # Your code here
+
+
+    def get(self, key):
+        # Your code here
+
+
+    def remove(self, key: int) -> None:
+        # Your code here
 

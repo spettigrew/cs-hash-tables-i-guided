@@ -1,5 +1,5 @@
-# Data Structures and Algorithms II - Graphs II
+# Data Structures and Algorithms III - Hash Tables I
 
-This is the starter code for Computer Science - Sprint 3: Data Structures and Algorithms II - Graphs II.
+This is the starter code for Computer Science - Sprint 4: Data Structures and Algorithms III - Hash Tables I.
 
 Please fork and clone this repo to your computer by the start of class.
