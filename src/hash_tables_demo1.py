@@ -32,12 +32,12 @@ class ListNode:
 
 
 class MyHashTable:
-    def __init__(self):
-        self.array = [None] * 20
-
-    def put(self, key, value):
+    def __init__(self): # our constructor
+        self.array = [None] * 20    # creates an array size 20 [0-19 indices] with None (empty)
+ 
+    def put(self, key, value):  # put a key in our hash table
         # We need an array to store the values in
-        # Need to turn the key to index
+        # Need to turn the key to an index
         # Hash the key (map it to an integer in a finite space)
         hashed_key = hash(key)
         # Map the hashed key to an index in the array by % len(array)
@@ -49,7 +49,7 @@ class MyHashTable:
         # PLAN: return the value at the index of the key
         # hash the key, map it to the index, and then return the value at that index in the array
         hashed_key = hash(key)
-        index = hashed_key % len(self.array)
+        index = hashed_key % len(self.array)    #these 2 lines get used a lot, so can do a helper function
         if self.array[index] is None:
             return -1
         return self.array[index]
@@ -59,6 +59,7 @@ class MyHashTable:
         index = hashed_key % len(self.array)
 
         self.array[index] = None
+        # can't use a list in a hash table. Immutable
 
 
 hash_table = MyHashTable()
